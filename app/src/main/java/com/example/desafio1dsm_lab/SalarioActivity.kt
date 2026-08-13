@@ -9,7 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import kotlin.math.max
+import android.content.pm.PackageManager
 
 class SalarioActivity : AppCompatActivity() {
 
@@ -81,6 +81,7 @@ class SalarioActivity : AppCompatActivity() {
             getString(R.string.salario_bruto) +
                     ": $" +
                     String.format("%.2f", salario)
+
         tvAfp.text =
             getString(R.string.afp) +
                     ": $" +
@@ -111,7 +112,8 @@ class SalarioActivity : AppCompatActivity() {
     private fun vibrarDispositivo() {
 
         val vibrator = if (android.os.Build.VERSION.SDK_INT >=
-            android.os.Build.VERSION_CODES.S) {
+            android.os.Build.VERSION_CODES.S
+        ) {
 
             val vibratorManager =
                 getSystemService(Context.VIBRATOR_MANAGER_SERVICE)
@@ -125,14 +127,22 @@ class SalarioActivity : AppCompatActivity() {
             getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         }
 
+        if (!vibrator.hasVibrator()) {
+            return
+        }
+
         if (android.os.Build.VERSION.SDK_INT >=
-            android.os.Build.VERSION_CODES.O) {
+            android.os.Build.VERSION_CODES.O
+        ) {
+
+                VibrationEffect.createOneShot(
+                    300,
+                    VibrationEffect.DEFAULT_AMPLITUDE
+                )
 
 
         } else {
 
-            @Suppress("DEPRECATION")
-            vibrator.vibrate(300)
         }
     }
 }

@@ -15,7 +15,9 @@
         android:text="@string/titulo_principal"
         android:textSize="28sp"
         android:textStyle="bold"
-        android:layout_marginBottom="@dimen/margen_grande" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvSubtituloPrincipal"
@@ -23,26 +25,46 @@
         android:layout_height="wrap_content"
         android:text="@string/subtitulo_principal"
         android:textSize="18sp"
-        android:layout_marginBottom="@dimen/margen_grande" />
+        app:layout_constraintBottom_toTopOf="@+id/btnPromedioEstudiante"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.258"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloPrincipal" />
 
     <Button
         android:id="@+id/btnPromedioEstudiante"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
         android:text="@string/promedio_estudiante"
-        android:layout_marginBottom="@dimen/margen_normal" />
+        app:layout_constraintBottom_toTopOf="@+id/btnDescuentosSalario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubtituloPrincipal" />
 
     <Button
         android:id="@+id/btnDescuentosSalario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="78dp"
         android:text="@string/descuentos_salario"
-        android:layout_marginBottom="@dimen/margen_normal" />
+        app:layout_constraintBottom_toTopOf="@+id/btnCalculadoraBasica"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPromedioEstudiante" />
 
     <Button
         android:id="@+id/btnCalculadoraBasica"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/calculadora_basica" />
+        android:layout_marginBottom="342dp"
+        android:text="@string/calculadora_basica"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDescuentosSalario" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

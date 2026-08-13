@@ -81,6 +81,97 @@ class CalculadoraActivity : AppCompatActivity() {
             finish()
         }
     }
+    private fun realizarOperacion(operacion: String) {
+
+        val numero1 =
+            etPrimerNumero.text.toString().toDoubleOrNull()
+
+        val numero2 =
+            etSegundoNumero.text.toString().toDoubleOrNull()
+
+        if (numero1 == null) {
+            etPrimerNumero.error =
+                getString(R.string.campo_obligatorio)
+            return
+        }
+
+        if (numero2 == null) {
+            etSegundoNumero.error =
+                getString(R.string.campo_obligatorio)
+            return
+        }
+
+        val resultado: Double
+
+        when (operacion) {
+
+            "suma" -> {
+                resultado = numero1 + numero2
+            }
+
+            "resta" -> {
+                resultado = numero1 - numero2
+            }
+
+            "multiplicacion" -> {
+                resultado = numero1 * numero2
+            }
+
+            "division" -> {
+
+                if (numero2 == 0.0) {
+
+                    Toast.makeText(
+                        this,
+                        getString(R.string.division_cero),
+                        Toast.LENGTH_SHORT
+                    ).show()
+
+                    return
+                }
+
+                resultado = numero1 / numero2
+            }
+
+            "exponente" -> {
+                resultado = numero1.pow(numero2)
+            }
+
+            else -> {
+                return
+            }
+        }
+
+        tvResultadoCalculadora.text =
+            getString(R.string.resultado_calculadora) +
+                    ": " +
+                    String.format("%.2f", resultado)
+    }
+
+    private fun calcularRaiz() {
+
+        val numero =
+            etPrimerNumero.text.toString().toDoubleOrNull()
+
+        if (numero == null) {
+            etPrimerNumero.error =
+                getString(R.string.campo_obligatorio)
+            return
+        }
+
+        if (numero < 0) {
+            etPrimerNumero.error =
+                "No se puede calcular la raíz de un número negativo"
+            return
+        }
+
+        val resultado = sqrt(numero)
+
+        tvResultadoCalculadora.text =
+            getString(R.string.resultado_calculadora) +
+                    ": " +
+                    String.format("%.2f", resultado)
+    }
 
 
 }

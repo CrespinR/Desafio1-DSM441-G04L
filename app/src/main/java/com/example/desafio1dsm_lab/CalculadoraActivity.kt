@@ -173,5 +173,37 @@ class CalculadoraActivity : AppCompatActivity() {
                     String.format("%.2f", resultado)
     }
 
+    private fun guardarHistorial() {
+
+        val resultado =
+            tvResultadoCalculadora.text.toString()
+
+        try {
+
+            openFileOutput(
+                "historial.txt",
+                MODE_APPEND
+            ).use { archivo ->
+
+                archivo.write(
+                    "$resultado\n".toByteArray()
+                )
+            }
+
+            Toast.makeText(
+                this,
+                "Operación guardada",
+                Toast.LENGTH_SHORT
+            ).show()
+
+        } catch (e: Exception) {
+
+            Toast.makeText(
+                this,
+                "Error al guardar",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
 
 }

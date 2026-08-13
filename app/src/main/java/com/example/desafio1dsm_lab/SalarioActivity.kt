@@ -1,20 +1,138 @@
 package com.example.desafio1dsm_lab
 
+import android.content.Context
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.os.VibrationEffect
+import android.os.Vibrator
+import android.os.VibratorManager
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import kotlin.math.max
 
 class SalarioActivity : AppCompatActivity() {
+
+    private lateinit var etNombreEmpleado: EditText
+    private lateinit var etSalarioBase: EditText
+
+    private lateinit var tvSalarioBruto: TextView
+    private lateinit var tvRenta: TextView
+    private lateinit var tvAfp: TextView
+    private lateinit var tvIsss: TextView
+    private lateinit var tvSalarioNeto: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_salario)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        etNombreEmpleado = findViewById(R.id.etNombreEmpleado)
+        etSalarioBase = findViewById(R.id.etSalarioBase)
+
+        tvSalarioBruto = findViewById(R.id.tvSalarioBruto)
+        tvRenta = findViewById(R.id.tvRenta)
+        tvAfp = findViewById(R.id.tvAfp)
+        tvIsss = findViewById(R.id.tvIsss)
+        tvSalarioNeto = findViewById(R.id.tvSalarioNeto)
+
+        val btnCalcularSalario =
+            findViewById<Button>(R.id.btnCalcularSalario)
+
+        val btnVolverMenuSalario =
+            findViewById<Button>(R.id.btnVolverMenuSalario)
+
+        btnCalcularSalario.setOnClickListener {
+            calcularSalario()
+        }
+
+        btnVolverMenuSalario.setOnClickListener {
+            finish()
+        }
+    }
+
+    private fun calcularSalario() {
+
+        if (etNombreEmpleado.text.toString().trim().isEmpty()) {
+            etNombreEmpleado.error =
+                getString(R.string.campo_obligatorio)
+            return
+        }
+
+        val salario = etSalarioBase.text.toString().toDoubleOrNull()
+
+        if (salario == null || salario <= 0) {
+
+            etSalarioBase.error =
+                getString(R.string.salario_invalido)
+
+            vibrarDispositivo()
+
+            return
+        }
+
+        val afp = salario * 0.0725
+        val isss = salario * 0.03
+
+        val renta = calcularRenta(salario)
+
+        val salarioNeto = salario - afp - isss - renta
+
+        tvSalarioBruto.text =
+            getString(R.string.salario_bruto) +
+                    ": $" +
+                    String.format("%.2f", salario)
+        tvAfp.text =
+            getString(R.string.afp) +
+                    ": $" +
+                    String.format("%.2f", afp)
+
+        tvIsss.text =
+            getString(R.string.isss) +
+                    ": $" +
+                    String.format("%.2f", isss)
+
+        tvRenta.text =
+            getString(R.string.renta) +
+                    ": $" +
+                    String.format("%.2f", renta)
+
+        tvSalarioNeto.text =
+            getString(R.string.salario_neto) +
+                    ": $" +
+                    String.format("%.2f", salarioNeto)
+    }
+
+    private fun calcularRenta(salario: Double): Double {
+
+
+        return 0.0
+    }
+
+    private fun vibrarDispositivo() {
+
+        val vibrator = if (android.os.Build.VERSION.SDK_INT >=
+            android.os.Build.VERSION_CODES.S) {
+
+            val vibratorManager =
+                getSystemService(Context.VIBRATOR_MANAGER_SERVICE)
+                        as VibratorManager
+
+            vibratorManager.defaultVibrator
+
+        } else {
+
+            @Suppress("DEPRECATION")
+            getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        }
+
+        if (android.os.Build.VERSION.SDK_INT >=
+            android.os.Build.VERSION_CODES.O) {
+
+
+        } else {
+
+            @Suppress("DEPRECATION")
+            vibrator.vibrate(300)
         }
     }
 }

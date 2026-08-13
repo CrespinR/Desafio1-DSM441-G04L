@@ -9,47 +9,40 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/título"
+        android:id="@+id/tvTituloPrincipal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Desafio Practico 1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Calcular Promedio"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="157dp" />
+        android:text="@string/titulo_principal"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/margen_grande" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvSubtituloPrincipal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Desarrolo de Software para Moviles"
-        tools:layout_editor_absoluteX="93dp"
-        tools:layout_editor_absoluteY="97dp" />
+        android:text="@string/subtitulo_principal"
+        android:textSize="18sp"
+        android:layout_marginBottom="@dimen/margen_grande" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="163dp"
-        android:layout_height="53dp"
-        android:text="Salario"
-        tools:layout_editor_absoluteX="125dp"
-        tools:layout_editor_absoluteY="255dp" />
+        android:id="@+id/btnPromedioEstudiante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/promedio_estudiante"
+        android:layout_marginBottom="@dimen/margen_normal" />
 
     <Button
-        android:id="@+id/calculadora"
-        android:layout_width="164dp"
-        android:layout_height="52dp"
-        android:text="Calculadora"
-        tools:layout_editor_absoluteX="127dp"
-        tools:layout_editor_absoluteY="353dp" />
+        android:id="@+id/btnDescuentosSalario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/descuentos_salario"
+        android:layout_marginBottom="@dimen/margen_normal" />
+
+    <Button
+        android:id="@+id/btnCalculadoraBasica"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/calculadora_basica" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

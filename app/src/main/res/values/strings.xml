@@ -1,3 +1,54 @@
 <resources>
-    <string name="app_name">Desafio1DSM-lab</string>
+
+    <string name="app_name">Desafío Práctico</string>
+
+    <!-- Menú principal -->
+    <string name="titulo_principal">Desafío Práctico</string>
+    <string name="subtitulo_principal">Seleccione un ejercicio</string>
+    <string name="promedio_estudiante">Promedio del estudiante</string>
+    <string name="descuentos_salario">Descuentos al salario</string>
+    <string name="calculadora_basica">Calculadora básica</string>
+
+    <!-- General -->
+    <string name="volver_menu">Volver al menú</string>
+    <string name="calcular">Calcular</string>
+    <string name="resultado">Resultado</string>
+
+    <!-- Promedio -->
+    <string name="titulo_promedio">Promedio del estudiante</string>
+    <string name="nombre_estudiante">Nombre del estudiante</string>
+    <string name="nota_1">Nota 1</string>
+    <string name="nota_2">Nota 2</string>
+    <string name="nota_3">Nota 3</string>
+    <string name="nota_4">Nota 4</string>
+    <string name="nota_5">Nota 5</string>
+    <string name="calcular_promedio">Calcular promedio</string>
+    <string name="promedio_final">Promedio final</string>
+    <string name="estado_estudiante">Estado</string>
+    <string name="aprobado">Aprobado</string>
+    <string name="reprobado">Reprobado</string>
+    <string name="campo_obligatorio">Este campo es obligatorio</string>
+    <string name="nota_invalida">La nota debe estar entre 0 y 10</string>
+
+    <!-- Salario -->
+    <string name="titulo_salario">Descuentos al salario</string>
+    <string name="nombre_empleado">Nombre del empleado</string>
+    <string name="salario_base">Salario base</string>
+    <string name="renta">Renta</string>
+    <string name="afp">AFP (7.25%)</string>
+    <string name="isss">ISSS (3%)</string>
+    <string name="salario_bruto">Salario bruto</string>
+    <string name="salario_neto">Salario neto</string>
+    <string name="calcular_salario">Calcular salario</string>
+    <string name="salario_invalido">El salario debe ser positivo</string>
+
+    <!-- Calculadora -->
+    <string name="titulo_calculadora">Calculadora básica</string>
+    <string name="primer_numero">Primer número</string>
+    <string name="segundo_numero">Segundo número</string>
+    <string name="resultado_calculadora">Resultado</string>
+    <string name="division_cero">No se puede dividir entre cero</string>
+    <string name="calcular_operacion">Calcular operación</string>
+    <string name="historial">Historial</string>
+
 </resources>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="@dimen/padding_pantalla"
+    android:background="@color/fondo_principal">
 
     <TextView
         android:id="@+id/tvTituloPrincipal"
@@ -15,9 +15,8 @@
         android:text="@string/titulo_principal"
         android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="@color/azul_oscuro"
+        android:layout_marginBottom="@dimen/margen_pequeno" />
 
     <TextView
         android:id="@+id/tvSubtituloPrincipal"
@@ -25,46 +24,33 @@
         android:layout_height="wrap_content"
         android:text="@string/subtitulo_principal"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnPromedioEstudiante"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.258"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTituloPrincipal" />
+        android:textColor="@color/texto_secundario"
+        android:layout_marginBottom="@dimen/margen_grande" />
 
     <Button
         android:id="@+id/btnPromedioEstudiante"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
         android:text="@string/promedio_estudiante"
-        app:layout_constraintBottom_toTopOf="@+id/btnDescuentosSalario"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSubtituloPrincipal" />
+        android:textColor="@color/blanco"
+        android:backgroundTint="@color/azul_principal"
+        android:layout_marginBottom="@dimen/margen_normal" />
 
     <Button
         android:id="@+id/btnDescuentosSalario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="78dp"
         android:text="@string/descuentos_salario"
-        app:layout_constraintBottom_toTopOf="@+id/btnCalculadoraBasica"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnPromedioEstudiante" />
+        android:textColor="@color/blanco"
+        android:backgroundTint="@color/azul_principal"
+        android:layout_marginBottom="@dimen/margen_normal" />
 
     <Button
         android:id="@+id/btnCalculadoraBasica"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="342dp"
         android:text="@string/calculadora_basica"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDescuentosSalario" />
+        android:textColor="@color/blanco"
+        android:backgroundTint="@color/azul_principal" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

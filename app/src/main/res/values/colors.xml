@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="salario_bruto_color">#2E7D32</color>
-    <color name="salario_neto_color">#C62828</color>
+    <!-- Colores principales -->
+    <color name="azul_principal">#1565C0</color>
+    <color name="azul_secundario">#42A5F5</color>
+    <color name="azul_oscuro">#0D47A1</color>
+
+    <!-- Fondos -->
+    <color name="fondo_principal">#F5F7FA</color>
+    <color name="blanco">#FFFFFF</color>
+
+    <!-- Textos -->
+    <color name="texto_principal">#212121</color>
+    <color name="texto_secundario">#616161</color>
+
+    <!-- Resultados -->
+    <color name="salario_bruto_color">#1565C0</color>
+    <color name="salario_neto_color">#2E7D32</color>
+    <color name="descuento_color">#C62828</color>
+
+    <!-- Estados -->
+    <color name="estado_aprobado">#2E7D32</color>
+    <color name="estado_reprobado">#C62828</color>
 
 </resources>

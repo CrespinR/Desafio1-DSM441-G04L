@@ -2,7 +2,8 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/fondo_principal">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,6 +18,7 @@
             android:text="@string/titulo_calculadora"
             android:textSize="26sp"
             android:textStyle="bold"
+            android:textColor="@color/azul_oscuro"
             android:layout_gravity="center"
             android:layout_marginBottom="@dimen/margen_grande" />
 
@@ -26,6 +28,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/primer_numero"
             android:inputType="numberDecimal|numberSigned"
+            android:textColor="@color/texto_principal"
             android:layout_marginBottom="@dimen/margen_normal" />
 
         <EditText
@@ -34,43 +37,68 @@
             android:layout_height="wrap_content"
             android:hint="@string/segundo_numero"
             android:inputType="numberDecimal|numberSigned"
+            android:textColor="@color/texto_principal"
             android:layout_marginBottom="@dimen/margen_grande" />
 
         <Button
             android:id="@+id/btnSuma"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="+" />
+            android:text="+"
+            android:textSize="20sp"
+            android:textColor="@color/blanco"
+            android:backgroundTint="@color/azul_principal"
+            android:layout_marginBottom="@dimen/margen_pequeno" />
 
         <Button
             android:id="@+id/btnResta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="-" />
+            android:text="-"
+            android:textSize="20sp"
+            android:textColor="@color/blanco"
+            android:backgroundTint="@color/azul_principal"
+            android:layout_marginBottom="@dimen/margen_pequeno" />
 
         <Button
             android:id="@+id/btnMultiplicacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="×" />
+            android:text="×"
+            android:textSize="20sp"
+            android:textColor="@color/blanco"
+            android:backgroundTint="@color/azul_principal"
+            android:layout_marginBottom="@dimen/margen_pequeno" />
 
         <Button
             android:id="@+id/btnDivision"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="÷" />
+            android:text="÷"
+            android:textSize="20sp"
+            android:textColor="@color/blanco"
+            android:backgroundTint="@color/azul_principal"
+            android:layout_marginBottom="@dimen/margen_pequeno" />
 
         <Button
             android:id="@+id/btnExponente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="xʸ" />
+            android:text="xʸ"
+            android:textSize="20sp"
+            android:textColor="@color/blanco"
+            android:backgroundTint="@color/azul_secundario"
+            android:layout_marginBottom="@dimen/margen_pequeno" />
 
         <Button
             android:id="@+id/btnRaizCuadrada"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="√x" />
+            android:text="√x"
+            android:textSize="20sp"
+            android:textColor="@color/blanco"
+            android:backgroundTint="@color/azul_secundario"
+            android:layout_marginBottom="@dimen/margen_grande" />
 
         <TextView
             android:id="@+id/tvResultadoCalculadora"
@@ -78,7 +106,8 @@
             android:layout_height="wrap_content"
             android:text="@string/resultado_calculadora"
             android:textSize="22sp"
-            android:layout_marginTop="@dimen/margen_grande"
+            android:textStyle="bold"
+            android:textColor="@color/azul_oscuro"
             android:layout_marginBottom="@dimen/margen_grande" />
 
         <Button
@@ -86,13 +115,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/historial"
+            android:textColor="@color/blanco"
+            android:backgroundTint="@color/azul_principal"
             android:layout_marginBottom="@dimen/margen_normal" />
 
         <Button
             android:id="@+id/btnVolverMenuCalculadora"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/volver_menu" />
+            android:text="@string/volver_menu"
+            android:textColor="@color/blanco"
+            android:backgroundTint="@color/azul_secundario" />
 
     </LinearLayout>
 

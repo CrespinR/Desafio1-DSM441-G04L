@@ -2,7 +2,8 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/fondo_principal">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,6 +18,7 @@
             android:text="@string/titulo_salario"
             android:textSize="26sp"
             android:textStyle="bold"
+            android:textColor="@color/azul_oscuro"
             android:layout_gravity="center"
             android:layout_marginBottom="@dimen/margen_grande" />
 
@@ -26,6 +28,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/nombre_empleado"
             android:inputType="textPersonName"
+            android:textColor="@color/texto_principal"
             android:layout_marginBottom="@dimen/margen_normal" />
 
         <EditText
@@ -34,6 +37,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/salario_base"
             android:inputType="numberDecimal"
+            android:textColor="@color/texto_principal"
             android:layout_marginBottom="@dimen/margen_grande" />
 
         <Button
@@ -41,6 +45,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/calcular_salario"
+            android:textColor="@color/blanco"
+            android:backgroundTint="@color/azul_principal"
             android:layout_marginBottom="@dimen/margen_grande" />
 
         <TextView
@@ -49,6 +55,7 @@
             android:layout_height="wrap_content"
             android:text="@string/salario_bruto"
             android:textSize="20sp"
+            android:textStyle="bold"
             android:textColor="@color/salario_bruto_color"
             android:layout_marginBottom="@dimen/margen_normal" />
 
@@ -58,6 +65,7 @@
             android:layout_height="wrap_content"
             android:text="@string/renta"
             android:textSize="18sp"
+            android:textColor="@color/descuento_color"
             android:layout_marginBottom="@dimen/margen_normal" />
 
         <TextView
@@ -66,6 +74,7 @@
             android:layout_height="wrap_content"
             android:text="@string/afp"
             android:textSize="18sp"
+            android:textColor="@color/descuento_color"
             android:layout_marginBottom="@dimen/margen_normal" />
 
         <TextView
@@ -74,6 +83,7 @@
             android:layout_height="wrap_content"
             android:text="@string/isss"
             android:textSize="18sp"
+            android:textColor="@color/descuento_color"
             android:layout_marginBottom="@dimen/margen_normal" />
 
         <TextView
@@ -81,7 +91,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/salario_neto"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="@color/salario_neto_color"
             android:layout_marginBottom="@dimen/margen_grande" />
@@ -90,7 +100,9 @@
             android:id="@+id/btnVolverMenuSalario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/volver_menu" />
+            android:text="@string/volver_menu"
+            android:textColor="@color/blanco"
+            android:backgroundTint="@color/azul_secundario" />
 
     </LinearLayout>
 
